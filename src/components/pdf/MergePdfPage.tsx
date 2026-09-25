@@ -103,7 +103,7 @@ export const MergePdfPage: React.FC = () => {
       >
         <Upload className="w-6 h-6 text-slate-400 mx-auto mb-2" />
         <h3 className="text-xs font-semibold text-slate-800 font-mono">Drag and drop PDF files</h3>
-        <p className="text-[11px] text-slate-500 mt-1">or click to select files from disk</p>
+        <p className="text-[17px] text-slate-500 mt-1">or click to select files from disk</p>
         <label className="mt-3 inline-flex items-center gap-1.5 px-3 py-1.5 bg-slate-900 text-white text-xs font-medium rounded cursor-pointer hover:bg-slate-800 transition-colors">
           <Upload className="w-3.5 h-3.5" />
           <span>Browse PDF Files</span>
@@ -142,7 +142,7 @@ export const MergePdfPage: React.FC = () => {
                   <FileText className="w-4 h-4 text-slate-600 shrink-0" />
                   <div className="min-w-0">
                     <p className="font-medium text-slate-800 truncate">{item.file.name}</p>
-                    <p className="text-[10px] text-slate-400 font-mono">
+                    <p className="text-[15px] text-slate-400 font-mono">
                       {(item.file.size / 1024 / 1024).toFixed(2)} MB
                     </p>
                   </div>

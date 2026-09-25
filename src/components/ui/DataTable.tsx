@@ -83,7 +83,7 @@ export function DataTable<T extends { id: string; status?: any; createdAt?: any;
         {/* Table Body */}
         <div className="overflow-x-auto">
           <table className="w-full text-left text-xs text-slate-800">
-            <thead className="bg-slate-50 text-slate-600 font-mono text-[11px] border-b border-slate-200 uppercase tracking-wider">
+            <thead className="bg-slate-50 text-slate-600 font-mono text-[17px] border-b border-slate-200 uppercase tracking-wider">
               <tr>
                 <th className="py-2.5 px-4 w-10">#</th>
                 {columns.map((col, idx) => (

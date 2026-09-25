@@ -59,17 +59,12 @@ function LoginPage() {
       <div className="mb-10 text-center">
         <h1 className="font-serif text-2xl font-normal text-slate-900 tracking-tight">MY ADMIN</h1>
         <p className="text-xs text-slate-500 font-mono uppercase tracking-wider mt-1">
-          Website CMS Panel
         </p>
       </div>
 
       {/* Login Card */}
       <div className="w-full max-w-sm">
         <div className="bg-white border border-slate-200 rounded p-6 shadow-sm">
-          <div className="mb-5 border-b border-slate-200 pb-4">
-            <h2 className="font-serif text-base font-normal text-slate-900">Sign in to continue</h2>
-          </div>
-
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Username */}
             <div className="space-y-1">
@@ -139,9 +134,6 @@ function LoginPage() {
           </form>
         </div>
 
-        <p className="text-center text-[11px] text-slate-400 font-mono mt-4">
-          MY ADMIN — Personal CMS v1.0
-        </p>
       </div>
     </div>
   );

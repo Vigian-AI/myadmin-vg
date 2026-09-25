@@ -24,7 +24,7 @@ export const Route = createRootRoute({
     meta: [
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1' },
-      { title: 'MY ADMIN — Website CMS' },
+      { title: 'MY ADMIN' },
       { name: 'description', content: 'Personal website content management panel' },
     ],
     links: [

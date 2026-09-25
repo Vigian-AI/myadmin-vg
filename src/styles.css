@@ -3,7 +3,7 @@
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
-  --font-serif: 'EB Garamond', Georgia, serif;
+  --font-serif: 'EB Garamond', serif;
   --font-mono: 'JetBrains Mono', 'Courier New', monospace;
 }
 
@@ -12,7 +12,7 @@
 }
 
 html {
-  font-size: 16px;
+  font-size: 24px;
   scroll-behavior: smooth;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;

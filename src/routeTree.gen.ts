@@ -13,9 +13,10 @@ import { Route as AuthenticatedRouteImport } from './routes/_authenticated'
 import { Route as LoginRouteImport } from './routes/login'
 import { Route as AuthenticatedIndexRouteImport } from './routes/_authenticated/index'
 import { Route as AuthenticatedPdfMergeRouteImport } from './routes/_authenticated/pdf-merge'
-import { Route as AuthenticatedProfileRouteImport } from './routes/_authenticated/profile'
+import { Route as AuthenticatedSettingsRouteImport } from './routes/_authenticated/settings'
 import { Route as AuthenticatedDataBlogRouteImport } from './routes/_authenticated/data/blog'
-import { Route as AuthenticatedDataHeroRouteImport } from './routes/_authenticated/data/hero'
+import { Route as AuthenticatedDataContactRouteImport } from './routes/_authenticated/data/contact'
+import { Route as AuthenticatedDataHomeRouteImport } from './routes/_authenticated/data/home'
 import { Route as AuthenticatedDataNowRouteImport } from './routes/_authenticated/data/now'
 import { Route as AuthenticatedDataProjectsRouteImport } from './routes/_authenticated/data/projects'
 import { Route as AuthenticatedDownloaderFacebookRouteImport } from './routes/_authenticated/downloader/facebook'
@@ -40,9 +41,9 @@ const AuthenticatedPdfMergeRoute = AuthenticatedPdfMergeRouteImport.update({
   path: '/pdf-merge',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
-const AuthenticatedProfileRoute = AuthenticatedProfileRouteImport.update({
-  id: '/profile',
-  path: '/profile',
+const AuthenticatedSettingsRoute = AuthenticatedSettingsRouteImport.update({
+  id: '/settings',
+  path: '/settings',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
 const AuthenticatedDataBlogRoute = AuthenticatedDataBlogRouteImport.update({
@@ -50,9 +51,15 @@ const AuthenticatedDataBlogRoute = AuthenticatedDataBlogRouteImport.update({
   path: '/data/blog',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
-const AuthenticatedDataHeroRoute = AuthenticatedDataHeroRouteImport.update({
-  id: '/data/hero',
-  path: '/data/hero',
+const AuthenticatedDataContactRoute =
+  AuthenticatedDataContactRouteImport.update({
+    id: '/data/contact',
+    path: '/data/contact',
+    getParentRoute: () => AuthenticatedRoute,
+  } as any)
+const AuthenticatedDataHomeRoute = AuthenticatedDataHomeRouteImport.update({
+  id: '/data/home',
+  path: '/data/home',
   getParentRoute: () => AuthenticatedRoute,
 } as any)
 const AuthenticatedDataNowRoute = AuthenticatedDataNowRouteImport.update({
@@ -83,9 +90,10 @@ export interface FileRoutesByFullPath {
   '/': typeof AuthenticatedIndexRoute
   '/login': typeof LoginRoute
   '/pdf-merge': typeof AuthenticatedPdfMergeRoute
-  '/profile': typeof AuthenticatedProfileRoute
+  '/settings': typeof AuthenticatedSettingsRoute
   '/data/blog': typeof AuthenticatedDataBlogRoute
-  '/data/hero': typeof AuthenticatedDataHeroRoute
+  '/data/contact': typeof AuthenticatedDataContactRoute
+  '/data/home': typeof AuthenticatedDataHomeRoute
   '/data/now': typeof AuthenticatedDataNowRoute
   '/data/projects': typeof AuthenticatedDataProjectsRoute
   '/downloader/facebook': typeof AuthenticatedDownloaderFacebookRoute
@@ -94,10 +102,11 @@ export interface FileRoutesByFullPath {
 export interface FileRoutesByTo {
   '/login': typeof LoginRoute
   '/pdf-merge': typeof AuthenticatedPdfMergeRoute
-  '/profile': typeof AuthenticatedProfileRoute
+  '/settings': typeof AuthenticatedSettingsRoute
   '/': typeof AuthenticatedIndexRoute
   '/data/blog': typeof AuthenticatedDataBlogRoute
-  '/data/hero': typeof AuthenticatedDataHeroRoute
+  '/data/contact': typeof AuthenticatedDataContactRoute
+  '/data/home': typeof AuthenticatedDataHomeRoute
   '/data/now': typeof AuthenticatedDataNowRoute
   '/data/projects': typeof AuthenticatedDataProjectsRoute
   '/downloader/facebook': typeof AuthenticatedDownloaderFacebookRoute
@@ -108,10 +117,11 @@ export interface FileRoutesById {
   '/_authenticated': typeof AuthenticatedRouteWithChildren
   '/login': typeof LoginRoute
   '/_authenticated/pdf-merge': typeof AuthenticatedPdfMergeRoute
-  '/_authenticated/profile': typeof AuthenticatedProfileRoute
+  '/_authenticated/settings': typeof AuthenticatedSettingsRoute
   '/_authenticated/': typeof AuthenticatedIndexRoute
   '/_authenticated/data/blog': typeof AuthenticatedDataBlogRoute
-  '/_authenticated/data/hero': typeof AuthenticatedDataHeroRoute
+  '/_authenticated/data/contact': typeof AuthenticatedDataContactRoute
+  '/_authenticated/data/home': typeof AuthenticatedDataHomeRoute
   '/_authenticated/data/now': typeof AuthenticatedDataNowRoute
   '/_authenticated/data/projects': typeof AuthenticatedDataProjectsRoute
   '/_authenticated/downloader/facebook': typeof AuthenticatedDownloaderFacebookRoute
@@ -123,9 +133,10 @@ export interface FileRouteTypes {
     | '/'
     | '/login'
     | '/pdf-merge'
-    | '/profile'
+    | '/settings'
     | '/data/blog'
-    | '/data/hero'
+    | '/data/contact'
+    | '/data/home'
     | '/data/now'
     | '/data/projects'
     | '/downloader/facebook'
@@ -134,10 +145,11 @@ export interface FileRouteTypes {
   to:
     | '/login'
     | '/pdf-merge'
-    | '/profile'
+    | '/settings'
     | '/'
     | '/data/blog'
-    | '/data/hero'
+    | '/data/contact'
+    | '/data/home'
     | '/data/now'
     | '/data/projects'
     | '/downloader/facebook'
@@ -147,10 +159,11 @@ export interface FileRouteTypes {
     | '/_authenticated'
     | '/login'
     | '/_authenticated/pdf-merge'
-    | '/_authenticated/profile'
+    | '/_authenticated/settings'
     | '/_authenticated/'
     | '/_authenticated/data/blog'
-    | '/_authenticated/data/hero'
+    | '/_authenticated/data/contact'
+    | '/_authenticated/data/home'
     | '/_authenticated/data/now'
     | '/_authenticated/data/projects'
     | '/_authenticated/downloader/facebook'
@@ -192,11 +205,11 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedPdfMergeRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
-    '/_authenticated/profile': {
-      id: '/_authenticated/profile'
-      path: '/profile'
-      fullPath: '/profile'
-      preLoaderRoute: typeof AuthenticatedProfileRouteImport
+    '/_authenticated/settings': {
+      id: '/_authenticated/settings'
+      path: '/settings'
+      fullPath: '/settings'
+      preLoaderRoute: typeof AuthenticatedSettingsRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
     '/_authenticated/data/blog': {
@@ -206,11 +219,18 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AuthenticatedDataBlogRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
-    '/_authenticated/data/hero': {
-      id: '/_authenticated/data/hero'
-      path: '/data/hero'
-      fullPath: '/data/hero'
-      preLoaderRoute: typeof AuthenticatedDataHeroRouteImport
+    '/_authenticated/data/contact': {
+      id: '/_authenticated/data/contact'
+      path: '/data/contact'
+      fullPath: '/data/contact'
+      preLoaderRoute: typeof AuthenticatedDataContactRouteImport
+      parentRoute: typeof AuthenticatedRoute
+    }
+    '/_authenticated/data/home': {
+      id: '/_authenticated/data/home'
+      path: '/data/home'
+      fullPath: '/data/home'
+      preLoaderRoute: typeof AuthenticatedDataHomeRouteImport
       parentRoute: typeof AuthenticatedRoute
     }
     '/_authenticated/data/now': {
@@ -246,10 +266,11 @@ declare module '@tanstack/react-router' {
 
 interface AuthenticatedRouteChildren {
   AuthenticatedPdfMergeRoute: typeof AuthenticatedPdfMergeRoute
-  AuthenticatedProfileRoute: typeof AuthenticatedProfileRoute
+  AuthenticatedSettingsRoute: typeof AuthenticatedSettingsRoute
   AuthenticatedIndexRoute: typeof AuthenticatedIndexRoute
   AuthenticatedDataBlogRoute: typeof AuthenticatedDataBlogRoute
-  AuthenticatedDataHeroRoute: typeof AuthenticatedDataHeroRoute
+  AuthenticatedDataContactRoute: typeof AuthenticatedDataContactRoute
+  AuthenticatedDataHomeRoute: typeof AuthenticatedDataHomeRoute
   AuthenticatedDataNowRoute: typeof AuthenticatedDataNowRoute
   AuthenticatedDataProjectsRoute: typeof AuthenticatedDataProjectsRoute
   AuthenticatedDownloaderFacebookRoute: typeof AuthenticatedDownloaderFacebookRoute
@@ -258,10 +279,11 @@ interface AuthenticatedRouteChildren {
 
 const AuthenticatedRouteChildren: AuthenticatedRouteChildren = {
   AuthenticatedPdfMergeRoute: AuthenticatedPdfMergeRoute,
-  AuthenticatedProfileRoute: AuthenticatedProfileRoute,
+  AuthenticatedSettingsRoute: AuthenticatedSettingsRoute,
   AuthenticatedIndexRoute: AuthenticatedIndexRoute,
   AuthenticatedDataBlogRoute: AuthenticatedDataBlogRoute,
-  AuthenticatedDataHeroRoute: AuthenticatedDataHeroRoute,
+  AuthenticatedDataContactRoute: AuthenticatedDataContactRoute,
+  AuthenticatedDataHomeRoute: AuthenticatedDataHomeRoute,
   AuthenticatedDataNowRoute: AuthenticatedDataNowRoute,
   AuthenticatedDataProjectsRoute: AuthenticatedDataProjectsRoute,
   AuthenticatedDownloaderFacebookRoute: AuthenticatedDownloaderFacebookRoute,

@@ -7,13 +7,19 @@ export interface BaseEntity {
   updatedAt: string;
 }
 
-export interface HeroEntity extends BaseEntity {
+export interface HomeEntity extends BaseEntity {
   title: string;
   subtitle?: string | null;
   description?: string | null;
   buttonText?: string | null;
   buttonUrl?: string | null;
   image?: string | null;
+}
+
+export interface ContactLinkEntity extends BaseEntity {
+  label: string;
+  href: string;
+  icon: string;
 }
 
 export interface ProjectEntity extends BaseEntity {
@@ -41,16 +47,6 @@ export interface NowEntity extends BaseEntity {
   content: string;
 }
 
-export interface AdminProfileEntity {
-  id: string;
-  name: string;
-  email: string;
-  avatar?: string | null;
-  bio?: string | null;
-  createdAt: string;
-  updatedAt: string;
-}
-
 export interface ActivityLogItem {
   id: string;
   action: string;
@@ -65,6 +61,7 @@ export interface DashboardStatsData {
     projects: number;
     blog: number;
     now: number;
+    contact: number;
   };
   serverStatus: {
     status: string;

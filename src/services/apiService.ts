@@ -1,5 +1,5 @@
 import { apiClient } from '../api/client';
-import type { ApiResponse, DashboardStatsData, AdminProfileEntity } from '../types';
+import type { ApiResponse, DashboardStatsData } from '../types';
 
 export async function fetchResourceList<T>(
   resource: string,
@@ -51,18 +51,6 @@ export async function deleteResourceItem<T>(resource: string, id: string): Promi
 
 export async function fetchDashboardStats(): Promise<DashboardStatsData> {
   const res = await apiClient.get<ApiResponse<DashboardStatsData>>('/dashboard/stats');
-  return res.data.data;
-}
-
-export async function fetchProfile(): Promise<AdminProfileEntity> {
-  const res = await apiClient.get<ApiResponse<AdminProfileEntity>>('/profile');
-  return res.data.data;
-}
-
-export async function updateProfile(data: FormData): Promise<AdminProfileEntity> {
-  const res = await apiClient.put<ApiResponse<AdminProfileEntity>>('/profile', data, {
-    headers: { 'Content-Type': 'multipart/form-data' },
-  });
   return res.data.data;
 }
 

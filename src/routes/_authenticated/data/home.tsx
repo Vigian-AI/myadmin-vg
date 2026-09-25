@@ -1,17 +1,17 @@
 import { createFileRoute } from '@tanstack/react-router';
 import { GenericCrudPage } from '../../../components/cms/GenericCrudPage';
-import type { HeroEntity } from '../../../types';
+import type { HomeEntity } from '../../../types';
 import { getImageUrl } from '../../../api/client';
 
-export const Route = createFileRoute('/_authenticated/data/hero')({
-  component: HeroPage,
+export const Route = createFileRoute('/_authenticated/data/home')({
+  component: HomePage,
 });
 
-function HeroPage() {
+function HomePage() {
   return (
-    <GenericCrudPage<HeroEntity>
-      title="Hero Section Data"
-      description="Manage the primary hero section title, subtitle, call to action, and background image."
+    <GenericCrudPage<HomeEntity>
+      title="Home Section Data"
+      description="Manage the primary home section title, subtitle, call to action, and background image."
       resourceKey="hero"
       columns={[
         {
@@ -34,10 +34,10 @@ function HeroPage() {
       fields={[
         { name: 'title', label: 'Main Title', type: 'text', required: true, placeholder: "e.g. Hello, I'm VG." },
         { name: 'subtitle', label: 'Subtitle', type: 'text', placeholder: 'e.g. Designer · Developer · Writer' },
-        { name: 'description', label: 'Description Content', type: 'textarea', placeholder: 'Enter hero paragraph...' },
+        { name: 'description', label: 'Description Content', type: 'textarea', placeholder: 'Enter home paragraph...' },
         { name: 'buttonText', label: 'Button Text', type: 'text', placeholder: 'e.g. View Projects' },
         { name: 'buttonUrl', label: 'Button Target URL', type: 'text', placeholder: 'e.g. /projects' },
-        { name: 'image', label: 'Hero Image / Banner', type: 'image' },
+        { name: 'image', label: 'Home Image / Banner', type: 'image' },
       ]}
     />
   );

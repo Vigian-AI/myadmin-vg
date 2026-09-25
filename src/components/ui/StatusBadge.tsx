@@ -10,7 +10,7 @@ export const StatusBadge: React.FC<StatusBadgeProps> = ({ status }) => {
 
   return (
     <span
-      className={`inline-flex items-center px-2 py-0.5 text-[11px] font-mono border rounded-xs ${
+      className={`inline-flex items-center px-2 py-0.5 text-[17px] font-mono border rounded-xs ${
         isPublished
           ? 'bg-slate-100 text-slate-800 border-slate-300'
           : 'bg-slate-50 text-slate-500 border-slate-200'

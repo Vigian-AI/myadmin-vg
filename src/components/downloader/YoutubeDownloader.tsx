@@ -93,7 +93,7 @@ export const YoutubeDownloader: React.FC = () => {
 
             <div className="flex-1 space-y-3">
               <div>
-                <span className="text-[10px] font-mono text-slate-500 uppercase border border-slate-200 px-1.5 py-0.5 bg-slate-50">
+                <span className="text-[15px] font-mono text-slate-500 uppercase border border-slate-200 px-1.5 py-0.5 bg-slate-50">
                   YouTube Media
                 </span>
                 <h4 className="font-serif text-sm font-normal text-slate-900 mt-1">{mutation.data.title}</h4>

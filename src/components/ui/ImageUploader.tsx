@@ -59,7 +59,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
             className="w-20 h-20 rounded border border-dashed border-slate-300 hover:border-slate-400 bg-slate-50 flex flex-col items-center justify-center cursor-pointer text-slate-400 hover:text-slate-600 transition-colors shrink-0"
           >
             <ImageIcon className="w-5 h-5 mb-1 text-slate-400" />
-            <span className="text-[9px] font-mono uppercase">Select</span>
+            <span className="text-[14px] font-mono uppercase">Select</span>
           </div>
         )}
 
@@ -79,7 +79,7 @@ export const ImageUploader: React.FC<ImageUploaderProps> = ({
             <Upload className="w-3 h-3 text-slate-500" />
             {preview ? 'Change Image' : 'Choose File'}
           </button>
-          <p className="mt-1 text-[11px] text-slate-400 font-sans">JPG, PNG, WEBP up to 20MB</p>
+          <p className="mt-1 text-[17px] text-slate-400 font-sans">JPG, PNG, WEBP up to 20MB</p>
         </div>
       </div>
     </div>

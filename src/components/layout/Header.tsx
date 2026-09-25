@@ -8,18 +8,19 @@ export const Header: React.FC = () => {
   const routerState = useRouterState();
   const router = useRouter();
   const pathname = routerState.location.pathname;
-  const username = getUsername() || 'Admin';
+  const username = getUsername();
 
   const getPageTitle = (path: string) => {
     if (path === '/') return 'Dashboard Overview';
-    if (path.startsWith('/data/hero')) return 'Hero Section';
+    if (path.startsWith('/data/home')) return 'Home Section';
+    if (path.startsWith('/data/contact')) return 'Contact Links';
     if (path.startsWith('/data/projects')) return 'Projects';
     if (path.startsWith('/data/blog')) return 'Blog Posts';
     if (path.startsWith('/data/now')) return 'Now Section';
     if (path.startsWith('/pdf-merge')) return 'Merge PDF';
+    if (path.startsWith('/settings')) return 'Settings';
     if (path.startsWith('/downloader/facebook')) return 'Facebook Video Downloader';
     if (path.startsWith('/downloader/youtube')) return 'YouTube Video Downloader';
-    if (path.startsWith('/profile')) return 'Admin Profile';
     return 'CMS Admin';
   };
 
@@ -36,7 +37,6 @@ export const Header: React.FC = () => {
         <h2 className="font-serif text-lg font-normal text-slate-900 tracking-tight">
           {getPageTitle(pathname)}
         </h2>
-        <p className="text-xs text-slate-500 font-sans">PostgreSQL REST API CMS</p>
       </div>
 
       {/* Right Actions */}
@@ -56,7 +56,7 @@ export const Header: React.FC = () => {
 
         {/* View Website */}
         <a
-          href="http://localhost:5173"
+          href="https://vigian-ai.my.id"
           target="_blank"
           rel="noopener noreferrer"
           className="hidden sm:inline-flex items-center gap-1.5 px-3 py-1 text-xs font-medium text-slate-800 bg-white border border-slate-300 rounded hover:bg-slate-50 transition-colors"
@@ -68,9 +68,6 @@ export const Header: React.FC = () => {
         {/* User + Logout */}
         <div className="flex items-center gap-2 pl-2 border-l border-slate-200">
           <div className="flex items-center gap-2">
-            <div className="w-7 h-7 bg-slate-900 text-white flex items-center justify-center font-serif text-xs border border-slate-900 select-none">
-              {username.slice(0, 2).toUpperCase()}
-            </div>
             <span className="hidden sm:block text-xs font-mono text-slate-700">{username}</span>
           </div>
           <button

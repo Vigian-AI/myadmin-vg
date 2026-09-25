@@ -11,10 +11,11 @@ import {
   Download,
   Share2,
   Video,
-  User,
   ChevronDown,
   ChevronRight,
-  Sparkles,
+  Home,
+  Mail,
+  Settings,
 } from 'lucide-react';
 
 interface SidebarItem {
@@ -47,17 +48,14 @@ export const Sidebar: React.FC = () => {
       title: 'My Website Data',
       icon: Globe,
       children: [
-        { title: 'Hero', href: '/data/hero', icon: Sparkles },
+        { title: 'Home', href: '/data/home', icon: Home },
+        { title: 'Contact', href: '/data/contact', icon: Mail },
         { title: 'projects', href: '/data/projects', icon: FolderGit2 },
         { title: 'Blog', href: '/data/blog', icon: BookOpen },
         { title: 'now', href: '/data/now', icon: Clock },
       ],
     },
-    {
-      title: 'Merge PDF',
-      href: '/pdf-merge',
-      icon: FileStack,
-    },
+
     {
       title: 'Downloader',
       icon: Download,
@@ -67,9 +65,14 @@ export const Sidebar: React.FC = () => {
       ],
     },
     {
-      title: 'Profile',
-      href: '/profile',
-      icon: User,
+      title: 'Merge PDF',
+      href: '/pdf-merge',
+      icon: FileStack,
+    },
+    {
+      title: 'Settings',
+      href: '/settings',
+      icon: Settings,
     },
   ];
 
@@ -78,12 +81,12 @@ export const Sidebar: React.FC = () => {
       {/* Sidebar Header */}
       <div className="h-16 flex items-center px-5 border-b border-slate-200">
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-7 h-7 bg-slate-900 text-white font-serif flex items-center justify-center font-bold text-xs border border-slate-900">
-            VG
+          <div className="text-white font-serif flex items-center justify-center font-bold text-xs border-slate-900">
+            vigian
           </div>
           <div>
-            <h1 className="font-serif text-sm font-normal text-slate-900 tracking-tight">MY ADMIN</h1>
-            <p className="text-[10px] text-slate-500 font-mono uppercase tracking-wider">CMS Panel</p>
+            <h1 className="font-serif text-sm font-normal text-slate-900 tracking-tight"></h1>
+            <p className="text-[15px] text-slate-500 font-mono uppercase tracking-wider"> </p>
           </div>
         </Link>
       </div>
@@ -165,9 +168,8 @@ export const Sidebar: React.FC = () => {
       </nav>
 
       {/* Footer Info */}
-      <div className="p-3 border-t border-slate-200 bg-slate-50 text-[11px] text-slate-500 flex items-center justify-between font-mono">
-        <span>PostgreSQL</span>
-        <span className="w-1.5 h-1.5 rounded-full bg-slate-800" />
+      <div className="p-3 border-t border-slate-200 bg-slate-50 text-[17px] text-slate-500 flex items-center justify-between font-mono">
+        <span>Vigian</span>
       </div>
     </aside>
   );
