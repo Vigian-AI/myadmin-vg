@@ -1,5 +1,5 @@
 node_modules
 .output
 .tanstack
-npm-debug.log*
+npm-debug.log
 .git
