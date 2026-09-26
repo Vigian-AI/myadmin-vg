@@ -1,6 +1,6 @@
 import React from 'react';
 import { useRouterState, useRouter } from '@tanstack/react-router';
-import { ExternalLink, Database, Server, LogOut } from 'lucide-react';
+import { ExternalLink, LogOut } from 'lucide-react';
 import { clearAuth, getUsername } from '../../utils/auth';
 import { toast } from 'sonner';
 
