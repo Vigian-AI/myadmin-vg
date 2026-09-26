@@ -41,18 +41,6 @@ export const Header: React.FC = () => {
 
       {/* Right Actions */}
       <div className="flex items-center gap-3">
-        {/* Server Status */}
-        <div className="hidden sm:flex items-center gap-3 text-xs font-mono text-slate-600 bg-slate-50 px-3 py-1 rounded border border-slate-200">
-          <div className="flex items-center gap-1.5">
-            <Server className="w-3 h-3 text-slate-700" />
-            <span>:5000</span>
-          </div>
-          <span className="text-slate-300">|</span>
-          <div className="flex items-center gap-1.5">
-            <Database className="w-3 h-3 text-slate-700" />
-            <span>PostgreSQL</span>
-          </div>
-        </div>
 
         {/* View Website */}
         <a
